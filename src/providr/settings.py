@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'providr_posts.apps.ProvidrPostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,11 @@ ROOT_URLCONF = 'providr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+=======
         'DIRS': [os.path.join(BASE_DIR, 'templates.html')],
+>>>>>>> 4eba7d2546dfdb3979308ae010f60cd513a2daaa
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
