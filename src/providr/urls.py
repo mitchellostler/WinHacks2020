@@ -25,7 +25,7 @@ from .views import (
     dashboard_page,
     profile_page,
     example_page
-    )
+
 
 urlpatterns = [
     path('', home_page),
