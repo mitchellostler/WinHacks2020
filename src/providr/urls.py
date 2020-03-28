@@ -16,14 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import (
+
+# importing functions from the component(mini-application views)
+from accounts.views import (
     home_page,
-    # about_page,
-    # contact_page
-    )
+    products_page,
+)
+
+
+# importing the require functions from the project vierws
+# from .views import (
+#     home_page,
+#     # about_page,
+#     # contact_page
+# )
 
 urlpatterns = [
     path('', home_page),
+    path('products/', products_page),
     # path('login/', login_page),
     # path('signup/', signup_page),
     # path('dashboard/<str:user_id>', dashboard_page),
@@ -32,5 +42,3 @@ urlpatterns = [
     path('admin/', admin.site.urls)
 
 ]
-
-
