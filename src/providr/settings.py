@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gmaps',
-    'accounts',
+    'accounts'
 ]
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyB9T3n9WYiZKyr139VKRMIZTZI2speuavI'
@@ -59,11 +59,9 @@ ROOT_URLCONF = 'providr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
+
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-=======
-        'DIRS': [os.path.join(BASE_DIR, 'templates.html')],
->>>>>>> 4eba7d2546dfdb3979308ae010f60cd513a2daaa
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
