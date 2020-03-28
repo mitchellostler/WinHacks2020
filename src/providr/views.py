@@ -17,3 +17,5 @@ def create_post_page(request):
 
 def profile_page(request):
 	return HttpResponse("<h1>Add profile file</h1>")
+
+    #this is a test for backup
