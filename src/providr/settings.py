@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gmaps',
-    'accounts'
+    'Users',
+    'accounts',
+
 ]
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyB9T3n9WYiZKyr139VKRMIZTZI2speuavI'
