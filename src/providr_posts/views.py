@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
+from .forms import UserPostForm
 from .models import UserPost
 # Create your views here.
 
@@ -12,8 +13,11 @@ def user_post_list_view(request):
 
 def user_post_create_view(request):
     #create post
-    template_name = 'providr_posts/create.html'
-    context = {'form': None}
+    form = UserPostForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+    template_name = 'form.html'
+    context = {'form': form}
     return render(request, template_name, context)
 
 def user_post_detail_view(request, slug):

@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
+from .forms import ContactForm
+
 
 def home_page(request):
 	return render(request,"home.html")
@@ -17,6 +19,15 @@ def dashboard_page(request):
 def profile_page(request):
 	return HttpResponse("<h1>Add profile file</h1>")
 
+def contact_page(request):
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+    context = {
+        "title": "Contact Us", 
+        "form" : form
+        }
+    return render(request, "form.html", context)
 
 def example_page(request):
     context = {"title": "Example"}

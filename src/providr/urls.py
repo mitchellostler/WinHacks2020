@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from providr_posts.views import (
-    user_post_create_view,
+    user_post_create_view
     )
 from .views import (
     home_page,
@@ -24,7 +24,8 @@ from .views import (
     signup_page,
     dashboard_page,
     profile_page,
-    example_page
+    example_page,
+    contact_page
 )
 
 urlpatterns = [
@@ -36,5 +37,6 @@ urlpatterns = [
     path('post-new/', user_post_create_view),
     path('post/', include('providr_posts.urls')),
     path('example/', example_page),
+    path('contact/', contact_page),
     path('admin/', admin.site.urls)
 ]
