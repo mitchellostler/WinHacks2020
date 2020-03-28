@@ -10,7 +10,7 @@ class address(models.Model):
     street_ad = models.CharField(max_length = 220)
 
     lat = models.DecimalField(max_digits=12, decimal_places=6, default=0)
-    long = models.DecimalField(max_digits=12, decimal_places=6, default=0)a
+    long = models.DecimalField(max_digits=12, decimal_places=6, default=0)
 
     def street_to_coord(self):
         geocode_results = gmaps.geocode(self.street_ad)

@@ -25,7 +25,7 @@ from .views import (
     dashboard_page,
     profile_page,
     example_page
-
+)
 
 urlpatterns = [
     path('', home_page),
@@ -33,8 +33,8 @@ urlpatterns = [
     path('signup/', signup_page),
     path('dashboard/<str:user_id>', dashboard_page),
     path('profile/<str:user_id>', profile_page),
-    path('post/', include('providr_posts.urls')),
     path('post-new/', user_post_create_view),
+    path('post/', include('providr_posts.urls')),
     path('example/', example_page),
     path('admin/', admin.site.urls)
 ]
