@@ -18,8 +18,11 @@ from django.urls import path
 
 from .views import (
     home_page,
-    about_page,
-    contact_page
+    login_page,
+    signup_page,
+    dashboard_page,
+    create_post_page,
+    profile_page
     )
 
 urlpatterns = [
