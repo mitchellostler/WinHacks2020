@@ -1,0 +1,10 @@
+from django.db import models
+
+# Create your models here.
+class MyUser(models.Model):
+    email     = models.EmailField(max_length=30, blank=True)
+    username  = models.CharField(max_length=20, blank=True, unique=True)
+    password  = models.CharField(max_length=20, blank=True)
+    fname     = models.CharField(max_length=20, blank=True)
+    lname     = models.CharField(max_length=20, blank=True)
+ 
