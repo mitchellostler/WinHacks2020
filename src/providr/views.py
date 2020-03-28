@@ -20,9 +20,13 @@ def create_post_page(request):
 def profile_page(request):
 	return HttpResponse("<h1>Add profile file</h1>")
 
+<<<<<<< HEAD
 def example_page(request):
     context = {"title": "Example"}
     template_name = "home.html"
     template_obj = get_template(template_name)
     rendered_item = template_obj.render(context)
     return HttpResponse(rendered_item)
+=======
+    #this is a test for backup
+>>>>>>> backup
