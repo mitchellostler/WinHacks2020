@@ -28,7 +28,7 @@ from .views import (
     create_post_page,
     profile_page,
     example_page
-    )
+
 
 urlpatterns = [
     path('', home_page),
