@@ -3,6 +3,8 @@ from .forms import SignUpForm, LoginForm
 from .models import Login, MyUser
 from  django.http import QueryDict
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
+from accounts.views import dashboard_page
 
 
 def signup_view(request):
@@ -30,7 +32,7 @@ def login_view(request):
                 validated = True
         if validated:
             print('PASSED')
-            return HttpResponseRedirect('login')
+            return redirect(dashboard_page)
         else:
             print('Failed')
     form = LoginForm(request.POST)
