@@ -6,7 +6,7 @@ from .forms import ContactForm
 
 
 def home_page(request):
-    return render(request, "home.html")
+    return render(request, "landing.html")
 
 
 # def login_page(request):
