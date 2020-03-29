@@ -1,7 +1,112 @@
 
 {% extends "base.html" %}
+  <!-- Navigation -->
+    
+  
+    <!-- Page Content -->
+    <div class="container">
+  
+      <div class="row">
+  
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+            {% block content %}
+          <!-- Title -->
+          <h1 class="mt-4">{{ object.title }}</h1>
+          <!-- Author -->
+          <p class="lead">
+            by
+            <a href="#">{{ content.author }}</a>
+          </p>
+          <hr>
+          <!-- Date/Time -->
+          <p>Posted on {{ object.date }}</p>
+          <hr>
+          <!-- Post Content -->
+          <p>{{ object.content }}</p>
+            
+          <hr>
 
-{% block content %}
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.content }}</p>
-{% endblock %}
+        </div>
+  
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+  
+        <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Hygiene</a>
+                    </li>
+                    <li>
+                      <a href="#">Food</a>
+                    </li>
+                    <li>
+                      <a href="#">More shit</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Even More shit</a>
+                    </li>
+                    <li>
+                      <a href="#">I dont know what else</a>
+                    </li>
+                    <li>
+                      <a href="#">gg</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header"><Ul>About {{ object.author }}</Ul></h5>
+            <div class="card-body">
+              Information should include email, full name and the maps api? or
+              something like that
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+      <!-- /.row -->
+  
+    </div>
+    <!-- /.container -->
+  
+    <!-- Footer -->
+    <!-- <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright © Your Website 2019</p>
+      </div>
+      .container -->
+    <!-- </footer>  -->
+  
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+
+  {% endblock %}

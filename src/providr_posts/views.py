@@ -17,7 +17,7 @@ def user_post_create_view(request):
     #create post
     form = UserPostModelForm(request.POST or None)
     if form.is_valid():
-        obj = form.save(commit=false)
+        obj = form.save(commit=False)
         obj.user = request.user
         obj.save()
         form = UserPostModelForm()
