@@ -5,25 +5,28 @@ import requests
 
 
 
-def get_maps_image(address):
+def get_maps_image():
+    
     mapskey='AIzaSyB9T3n9WYiZKyr139VKRMIZTZI2speuavI'
     url = "https://maps.googleapis.com/maps/api/staticmap?"
     # center defines the center of the map, 
     # equidistant from all edges of the map.  
-    center = 'center={},{}'.format(address.coord['lat'], address.coord['long'])
+
+    center = 'center={},{}'.format(45.274912, -75.9129349)
+    
     # zoom defines the zoom 
     # level of the map 
-    zoom = '&zoom={}'.format('10')
-    user_marker = '&markers=color:red%7Clabel:C%7C{}}'.format(address.coord['lat'], address.coord['long'])
+    #user_marker = '&markers=color:red%7Clabel:C%7C{}}'.format(45.274912, -75.9129349)
     # get method of requests module 
     # return response object 
-    google_url = url + center + zoom + "&size=400x400&key=" + mapskey
-    print(google_url)
-    r = requests.get(url + center + zoom + "&size=400x400&key=" + mapskey) 
+    #google_url = url + center + "&size=400x400&key=" + mapskey
+    defaulturl = '''https://maps.googleapis.com/maps/api/staticmap?
+    center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+    &markers=color:blue%7Clabel:S%7C40.702147,-74.015794
+    &markers=color:green%7Clabel:G%7C40.711614,-74.012318
+    &markers=color:red%7Clabel:C%7C40.718217,-73.998284
+    &key={}'''.format(mapskey)   
+    print(defaulturl)
+    r = requests.get(defaulturl) 
     #up until here is working
-
-    #TODO: find way to store image and get to front end
-    # wb mode is stand for write binary mode 
-    f = open('map.png', 'wb') 
-    f.write(r.content) 
-    f.close() 
+    return r
