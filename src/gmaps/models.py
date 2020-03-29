@@ -3,7 +3,7 @@ import googlemaps
 maps_key = 'AIzaSyB9T3n9WYiZKyr139VKRMIZTZI2speuavI'
 gmaps = googlemaps.Client(key=maps_key)
 # Geocoding an address
-
+cooordinates = {'1':[]}
 # Create your models here.
 
 class address(models.Model):
