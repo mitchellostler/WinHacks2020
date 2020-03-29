@@ -34,10 +34,7 @@ def contact_page(request):
     if form.is_valid():
         print(form.cleaned_data)
     context = {
-<<<<<<< HEAD
-=======
         "title": "Contact Us",
->>>>>>> 063d0bf2db168898832f01531e80a168e5ee24c8
         "form" : form
         }
     return render(request, "form.html", context)
