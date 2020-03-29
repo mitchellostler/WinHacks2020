@@ -1,6 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
-from .forms import UserPostForm
+from .forms import UserPostModelForm
 from .models import UserPost
 # Create your views here.
 
@@ -11,13 +12,18 @@ def user_post_list_view(request):
     context = {'object_list': qs}
     return render(request, template_name, context)
 
+@login_required
 def user_post_create_view(request):
     #create post
-    form = UserPostForm(request.POST or None)
+    form = UserPostModelForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data)
+        obj = form.save(commit=False)
+        obj.user = request.user
+        obj.save()
+        form = UserPostModelForm()
     template_name = 'form.html'
-    context = {'form': form}
+    context = {
+        'form': form}
     return render(request, template_name, context)
 
 def user_post_detail_view(request, slug):
