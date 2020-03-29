@@ -1,27 +1,39 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
-# Create your views here.
+from .models import *
 
 
-def home_page(request):
-    return render(request, 'dashboard.html')
-
-
-def products_page(request):
-    return render(request, "products.html")
-
-
-def signup_page(request):
-    return HttpResponse("<h1>Add signup file</h1>")
+# def signup_view(request):
+#     form = UserCreationForm()
+#     render(request, 'signuptest.html')
 
 
 def dashboard_page(request):
-    return HttpResponse("<h1>add dashboard file</h1>")
+
+    # Finding the total amount of donatio
+
+    donations = Donate.objects.all()
+    donators = Donator.objects.all()
+
+    total_donators = donators.count()
+    total_donations = donations.count()
+
+    # Filtering items that have been delivered
+
+    delivered = donations.filter(status="Delivered").count()
+    pending = donations.filter(status="Pending").count()
+
+    context = {'donations': donations, 'donators': donators,
+               "total_donators": total_donators, "total_donations": total_donations, "delivered": delivered, "pending": pending}
+
+    return render(request, 'accounts/dashboard.html', context)
 
 
-def create_post_page(request):
-    return HttpResponse("<h1>Add profile file</h1>")
+def items(request):
+    items = Item.objects.all()
+    return render(request, "accounts/items.html", {"items": items})
 
 
-def profile_page(request):
-    return HttpResponse("<h1>Add profile file</h1>")
+def donators(request):
+    return render(request, "accounts/donators.html")

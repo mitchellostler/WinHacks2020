@@ -1,0 +1,40 @@
+{% extends "accounts/main.html"   %}
+
+{%block content %}
+
+
+<br>
+
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Items(s)</h5>
+        </div>
+
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Date Posted</th>
+                </tr>
+
+                <!-- Trying to display each item to the page -->
+                {% for item in items %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.date_created}}</td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
