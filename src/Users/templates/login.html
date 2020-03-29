@@ -37,12 +37,6 @@
 						<li>
 							<a style="display: inline-block; color: white;" href="#">Signup</a>
 						</li>
-
-
-							<li>
-								<a href="#" style="display: inline-block; color: white; margin-left: 20px;">Logout</a>
-							</li>
-
 				</ul>
 
 			</div>
@@ -55,18 +49,13 @@
 				   text-align: center">Login</h1>
 			<div style="width: 30%; margin: 30px auto;">
 
-				<form action="/dashboard" method="POST"></form>
-
 					<div class="form-group">
 						<form method='post'>
 							{% csrf_token %}
 							{{ form }}
-						 <button type='submit'class="btn btn-lg btn-primary btn-block">Login</button>
+						 <button type='submit'class="btn btn-lg btn-primary btn-block" >Login</button>
 					 	</form>
 					</div>
-
-
-				</form>
 
 			</div>
 

@@ -14,7 +14,7 @@ from providr_posts.models import UserPost
 
 def dashboard_page(request):
 
-    # Finding the total amount of donatio
+    # Finding the total amount of donations
 
     donations = Donate.objects.all()
     donators = Donator.objects.all()
@@ -22,7 +22,7 @@ def dashboard_page(request):
     total_donators = donators.count()
     total_donations = donations.count()
     qs = UserPost.objects.all()
-    for(UserPost)
+    # for(UserPost)
 
     # Filtering items that have been delivered
 

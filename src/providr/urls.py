@@ -19,11 +19,11 @@ from django.urls import path, re_path, include
 # importing functions from the component(mini-application views)
 
 # importing the require functions from the project vierws
-# from .views import (
-#     home_page,
-#     # about_page,
-#     # contact_page
-# )
+from .views import (
+    home_page,
+    # about_page,
+    # contact_page
+)
 
 #urlpatterns = [
     # path('login/', login_page),
@@ -38,7 +38,8 @@ from providr_posts.views import (
 
 
 urlpatterns = [
-
+    
+    path('', home_page),
     path('users/', include('Users.urls')),
     path('post-new/', user_post_create_view),
     path('post/', include('providr_posts.urls')),

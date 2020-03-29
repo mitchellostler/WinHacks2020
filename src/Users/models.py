@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 # Create your models here.
 class MyUser(models.Model):
@@ -11,4 +12,4 @@ class MyUser(models.Model):
 
 class Login(models.Model):
     username  = models.CharField(max_length=20, blank=True, unique=True)
-    password  = models.CharField(max_length=20, blank=True)
+    password  = models.CharField(max_length=20)
