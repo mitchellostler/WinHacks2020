@@ -15,6 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+
+# importing functions from the component(mini-application views)
+from accounts.views import (
+    home_page,
+    products_page,
+)
+
+
+# importing the require functions from the project vierws
+# from .views import (
+#     home_page,
+#     # about_page,
+#     # contact_page
+# )
+
+#urlpatterns = [
+    # path('login/', login_page),
+    # path('signup/', signup_page),
+    # path('dashboard/<str:user_id>', dashboard_page),
+    # path('dashboard/create_post>', create_post_page),
+    # path('profile/<str:user_id>', profile_page),
+
 from providr_posts.views import (
     user_post_create_view
     )
@@ -29,6 +51,14 @@ from .views import (
 )
 
 urlpatterns = [
+    # path('login/', login_page),
+    # path('signup/', signup_page),
+    # path('dashboard/create_post>', create_post_page),
+    # path('profile/<str:user_id>', profile_page),
+    # path('blog/', user_post_list_view),
+    # path('blog-new/', user_post_create_view),
+    # path('blog/<str:slug>/', user_post_detail_view),
+    # path('example/', example_page),
     path('', home_page),
     path('login/', login_page),
     path('signup/', signup_page),
@@ -38,5 +68,9 @@ urlpatterns = [
     path('post/', include('providr_posts.urls')),
     path('example/', example_page),
     path('contact/', contact_page),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('products/', products_page),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls'))
+
 ]

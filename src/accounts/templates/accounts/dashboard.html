@@ -1,0 +1,70 @@
+{%extends "accounts/main.html" %}
+
+
+{%block content%}
+{% include "accounts/status.html" %}
+
+
+
+<br>
+<!-- Using a boostrap dashboard  -->
+<div class="row">
+    <div class="col-md-5">
+        <h5>DONATOR(s):</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="">Create Donator</a>
+            <table class="table table-sm">
+                <tr>
+
+                    <th>Donator</th>
+                    <th>Phone #</th>
+                </tr>
+                {%for donator  in donators %}
+
+                <tr>
+                    <td>{{donator.name}}</td>
+                    <td>{{donator.phone}}</td>
+                </tr>
+
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h5>Latest Donations</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="">Make Donation(s)</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Item</th>
+                    <th>Date Donated</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+
+
+                {% for donation in donations %}
+
+                <tr>
+                    <td>{{donation.item}}</td>
+                    <td>{{donation.date_created}}</td>
+                    <td>{{donation.status}}</td>
+                    <td><a href="">UPDATE</a></td>
+                    <td><a href="">DELETE</a></td>
+                </tr>
+
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+{%endblock%}

@@ -60,9 +60,9 @@ ROOT_URLCONF = 'providr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates/accounts')],
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-
+        'DIRS': [os.path.join(BASE_DIR, 'templates.html')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,3 +126,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_URL = "/images/"
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
