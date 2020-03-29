@@ -51,6 +51,14 @@ from .views import (
 )
 
 urlpatterns = [
+    # path('login/', login_page),
+    # path('signup/', signup_page),
+    # path('dashboard/create_post>', create_post_page),
+    # path('profile/<str:user_id>', profile_page),
+    # path('blog/', user_post_list_view),
+    # path('blog-new/', user_post_create_view),
+    # path('blog/<str:slug>/', user_post_detail_view),
+    # path('example/', example_page),
     path('', home_page),
     path('login/', login_page),
     path('signup/', signup_page),
@@ -60,8 +68,9 @@ urlpatterns = [
     path('post/', include('providr_posts.urls')),
     path('example/', example_page),
     path('contact/', contact_page),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
     path('products/', products_page),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls'))
 
 ]

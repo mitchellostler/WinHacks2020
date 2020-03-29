@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#logo {
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  max-height: 100vh;
+  background-color: #ebeff5;
+}
+
+#total-donations {
+  background-color: #4cb4c7;
+}
+
+#donations-delivered {
+  background-color: #1f91dd;
+}
+
+#donations-pending {
+  background-color: #e0b149;
+}
