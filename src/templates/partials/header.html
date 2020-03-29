@@ -11,7 +11,6 @@
 	<style>
 	.nav justify-content-end li a:hover{
 		background-color: #ddd;
-
 	}
 	</style>
 	</head>
@@ -35,9 +34,14 @@
 							<a href="#" style="color: white;">Login</a>
 						</li>
 						<li>
-							<a style="display: inline-block; color: white;" href="#">Register</a>
+							<a style="display: inline-block; color: white;" href="#">Signup</a>
 						</li>
 
+
+
+							<li style="color: white; padding: 0px 20px 0px 0px;">Signed in as
+							username
+							</li>
 
 							<li>
 								<a href="#" style="display: inline-block; color: white; margin-left: 20px;">Logout</a>
@@ -49,27 +53,3 @@
 		</div>
 
 	</nav>
-
-<div class="container" >
-	<div class="row">
-		<h1 style="width:100% ;
-				   text-align: center"> Sign Up </h1>
-			<div style="width: 30%; margin: 30px auto;">
-					<form method='post'>
-							{% csrf_token %}
-							{{ form }}
-						 <button type='submit'class="btn btn-lg btn-primary btn-block">Join Us</button>
-					 </form>
-					</div>
-
-
-				</form>
-
-			</div>
-
-
-	</div>
-
-</div>
-
-</body>

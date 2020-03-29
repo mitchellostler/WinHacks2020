@@ -35,9 +35,14 @@
 							<a href="#" style="color: white;">Login</a>
 						</li>
 						<li>
-							<a style="display: inline-block; color: white;" href="#">Register</a>
+							<a style="display: inline-block; color: white;" href="#">Signup</a>
 						</li>
 
+
+
+							<li style="color: white; padding: 0px 20px 0px 0px;">Signed in as
+							username
+							</li>
 
 							<li>
 								<a href="#" style="display: inline-block; color: white; margin-left: 20px;">Logout</a>
@@ -53,13 +58,49 @@
 <div class="container" >
 	<div class="row">
 		<h1 style="width:100% ;
-				   text-align: center"> Sign Up </h1>
+				   text-align: center"> SignUp!! </h1>
 			<div style="width: 30%; margin: 30px auto;">
-					<form method='post'>
-							{% csrf_token %}
-							{{ form }}
-						 <button type='submit'class="btn btn-lg btn-primary btn-block">Join Us</button>
-					 </form>
+
+				<form action="/register" method="POST">
+
+					<div class="form-group">
+
+						 <input class="form-control" type="text" name="username" placeholder="username">
+
+					</div>
+
+					<div class="form-group">
+
+						<input class="form-control"type="text" name="firstName" placeholder="First Name">
+
+					</div>
+					<div class="form-group">
+
+						<input class="form-control"type="text" name="lastName" placeholder="Last Name">
+
+					</div>
+					<div class="form-group">
+
+						<input class="form-control"type="email" name="email" placeholder="email">
+
+					</div>
+
+					<div class="form-group">
+
+						<input class="form-control"type="password" name="password" placeholder="password">
+
+					</div>
+					<div class="form-group">
+
+						<input class="form-control"type="password" name="adminCode" placeholder="For admin only">
+
+					</div>
+
+
+					<div class="form-group">
+						<button class="btn btn-lg btn-primary btn-block">
+							Signup!!
+						</button>
 					</div>
 
 
