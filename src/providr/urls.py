@@ -14,33 +14,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from providr_posts.views import (
-    user_post_detail_view,
-    user_post_list_view,
-    user_post_create_view
-    )
+from django.urls import path, include
+# from providr_posts.views import (
+#     user_post_detail_view,
+#     user_post_list_view,
+#     user_post_create_view
+# )
+
+
 from .views import (
     home_page,
-    login_page,
-    signup_page,
-    dashboard_page,
-    create_post_page,
-    profile_page,
-    example_page
-
+    # login_page,
+    # signup_page,
+    # create_post_page,
+    # profile_page,
+    # example_page
+)
 
 urlpatterns = [
+    # path('login/', login_page),
+    # path('signup/', signup_page),
+    # path('dashboard/create_post>', create_post_page),
+    # path('profile/<str:user_id>', profile_page),
+    # path('blog/', user_post_list_view),
+    # path('blog-new/', user_post_create_view),
+    # path('blog/<str:slug>/', user_post_detail_view),
+    # path('example/', example_page),
     path('', home_page),
-    path('login/', login_page),
-    path('signup/', signup_page),
-    path('dashboard/<str:user_id>', dashboard_page),
-    path('dashboard/create_post>', create_post_page),
-    path('profile/<str:user_id>', profile_page),
-    path('blog/', user_post_list_view),
-    path('blog-new/', user_post_create_view),
-    path('blog/<str:slug>/', user_post_detail_view),
-    path('example/', example_page),
-    path('admin/', admin.site.urls)
+
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls'))
 
 ]
